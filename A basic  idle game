@@ -1,0 +1,59 @@
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			//
+			// The InitializeComponent() call is required for Windows Forms designer support.
+			//
+			InitializeComponent();
+			
+			//
+			// TODO: Add constructor code after the InitializeComponent() call.
+			//
+		}
+    
+    /*
+        Made by ReUpStar
+        2019/3/25
+    
+    */
+    
+		double power = 0, pps = 15;		
+		void Button1Click(object sender, EventArgs e)
+		{
+			double year = 0,month = 0;
+			string s,re;
+			button1.Enabled = false;
+			for(year = 0; year < 5; year++)
+			{
+				for(month = 0; month < 12; month++)
+				{
+					s = string.Format("您已经修行了{0}年{1}个月!\r\n",year,month);
+					//System.Threading.Thread.Sleep(6000);
+					textBox1.Text += s;
+					power += pps;
+					label2.Text = power.ToString();
+					//延时
+					System.Threading.Thread.Sleep(100);
+					
+					//实时更新
+					Application.DoEvents();
+					
+					//及时跳转至最后一行
+					textBox1.SelectionStart = textBox1.Text.Length;
+					textBox1.ScrollToCaret();					
+				}
+				re = string.Format("-----你已经完成了第{0}年的修行！-----\r\n", year + 1);
+											
+				if(year == 4 && month == 12)
+				{
+					re = re.Replace("！", ",恭喜升仙！");
+				}
+				textBox1.Text += re;								
+			}			
+		}
+		void btn_ItemClick(object sender, EventArgs e)
+		{
+			pps *= 1.2;//装备道具后效率提高
+		}
+	}
