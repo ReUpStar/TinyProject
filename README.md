@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+## Welcome to Tiny Project made by ReUpStar
 
-You can use the [editor on GitHub](https://github.com/ReUpStar/TinyProject/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+There are some classical enlightening codes in my daily work. 
+If you have some constructive comments,please leave your valuable comments on GitHub.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Lastest Codes
 
-### Markdown
+### A basic idle game
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+A Chinese immortal theme game, including automatic access to resources, upgrade according to time, produce different prompts at different times and improve the efficiency of resource acquisition through equipment.
 
-```markdown
-Syntax highlighted code block
+For more details see [A basic idle game](https://github.com/ReUpStar/TinyProject/blob/ReUpStar-patch-1/A%20basic%20%20idle%20game).
 
-# Header 1
-## Header 2
-### Header 3
+### A tiny game
 
-- Bulleted
-- List
+A popular oral game among students, I programmed it and made a computer player with the secret of the game. It will judge the way to win according to the player's action, and there is only one way to defeat it.
 
-1. Numbered
-2. List
+Rules of the game:
+It is up to the player to choose whether to start first, and then each side will say up to three consecutive numbers from the number "1", eventually forced to say the number "21" one side fails.
 
-**Bold** and _Italic_ and `Code` text
+For more details see [A tiny game](https://github.com/ReUpStar/TinyProject/blob/ReUpStar-patch-1/A%20tiny%20game).
 
-[Link](url) and ![Image](src)
-```
+## Author Information
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ReUpStar/TinyProject/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ReUpStar:A college student form chinese who enjoys programming.
