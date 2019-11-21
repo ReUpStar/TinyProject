@@ -1,0 +1,310 @@
+﻿<!--demo0516.html-->
+<!DOCTYPE html >
+<head>
+<bgsound src="movie\song.mp3" loop="-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="CSSs\CSS_1.css" type = "text/css"/><!--外部样式-->
+<title>我的游戏官方网站</title>
+<style>
+/* 下拉按钮样式 */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 96px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.title
+{
+	border-width:1px;
+	height: 50px;
+	width: 100%;
+	text-align:center;
+	background-image:url(images\bg_wood.jpg);
+	font-size:50px;
+	font-family:"华文行楷";
+}
+#head
+{
+	border:1px;
+	height: 400px;
+	width: 100%;
+}
+#main
+{
+	height: 2000px;
+	width: 100%;
+}
+#user
+{
+	height: 2200px;
+	align: center;
+	float: left;
+	width: 19%;
+}
+.login
+{
+	border:1px;
+	height: 10%;
+	align: center;
+	background:url(images\bg_wood.jpg);
+}
+#btn
+{
+	border:1px;
+	height: 85%;
+	align: center;
+	padding-top:50px;
+}
+#contain
+{
+	height: 2200px;
+	width: 79%;
+	background-color:#FFFFFF;
+}
+#info
+{
+	height: 450px;
+	float:right;
+	width: 49%;
+}
+#gallery
+{
+	clear:both;
+	border:1px;
+	height: 775px;
+	margin-top:30px;
+}
+#data
+{
+	border:1px;
+	height: 1000px;
+	align: center;
+}	
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#div1 {
+	float:left;
+    background: red;
+    width: 50%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+#div1 ul {
+    position: absolute;
+    left: 100;
+    top: 0;
+}
+
+#div1 ul li {
+    float: left;
+    list-style: none;
+    width: 450;
+    height: 250px;
+}
+
+#div1 ul li img {
+    width: 615px;
+    height: 450px;
+}
+
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.fc{
+	clear:left;
+	clear:right;
+}
+</style>
+
+<script type="text/javascript">
+	window.onload = function() {
+		var oDiv1 = document.getElementById("div1");
+		var oUl = oDiv1.getElementsByTagName("ul")[0];
+		var aLi = oUl.getElementsByTagName("li");
+		var space = -2;
+
+		oUl.innerHTML += oUl.innerHTML;
+		oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+
+		function play() {
+			if(oUl.offsetLeft < -oUl.offsetWidth / 2) {
+				oUl.style.left = '0';
+			}
+			if(oUl.offsetLeft > 0) {
+				oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+				space = 2;
+			}
+			oUl.style.left = oUl.offsetLeft + space + 'px';
+		};
+		var timer = setInterval(play, 30);
+		oDiv1.onmouseover = function() {
+			clearInterval(timer);
+		};
+		oDiv1.onmouseout = function() {
+			timer = setInterval(play, 30);
+		};
+	};
+</script>
+</head>
+
+<body style="height:100%">
+	<!--官网应该包含的内容
+    	1.其它页面标签
+    	2.某个阶段的主要宣传图
+  		3.新闻资讯
+        4.关于游戏内容的版块
+        5.官方媒体
+        6.玩家创作  
+    -->
+	
+	<!--CSS 基础知识
+		外部
+			<link rel = name href = 路径 type = "text/css"/> ->head
+		内部
+			<style><!-- 具体内容 -></style>
+		行内样式
+			<tag style = >内容</tag>
+			
+		基本语法
+			选择符{属性:属性的取值;…………;}
+			选择符：单元素名 类名 ID(#名{……})
+				颜色 英文 十六进制 RGB（rgb(1,1,1)）
+			
+			float left center right 在页面中浮动
+		
+		样式表 存储大量复用样式
+		
+		div 
+		<div id class style></div>
+		float
+	-->
+	
+	<!--
+		timer = setInterval(函数，间隔时间（毫秒）)
+		字符串，数字，数学，Date
+		setTimeout（""）
+		setTimeout("函数()", interval) #400毫秒#
+	-->
+
+	<style type = "text/css">body{margin:0px;padding:0px;}</style><!--内部样式-->
+	
+	<div class="title">游戏</div>
+    	<div class="dropdown">
+    		<button class="dropbtn">游戏资料</button>
+      		<div class="dropdown-content">
+        		<a href="damage.html" target="new">伤害计算</a>   
+        		<a href="talking.html" target="new">聊天系统</a>
+        		<a href="item.html" target="new">物品分配</a>     
+      		</div>
+    	</div>
+   	<div id="head"><image src="images\bg.png" width="100%" height="400"></image></div>
+	<div id="main">
+		<div id="user">
+			<div class="login">
+				<form action="quest.html">
+					<br><p align="left" id="font1">用户登录：</p><br><br>
+					<p align="center" id="font1">
+						帐号：<input name = "user" type="text" size="20" value=""><br><br>
+						密码：<input name = "password" type="password" size="21" value=""><br>
+						<input name="Input" type="submit" value="登陆"><br><br>
+						<a>立即注册</a>								
+						<a>忘记密码？</a></p>
+				</form>
+			</div>
+			<div id="btn">
+				<div align="center"><a href="game.html"><image src="images\btn_start.png" width="60%" height="50px"></a></div>
+				<div align="center"><image src="images\btn_fill.png" width="60%" height="50px"></div>
+				<div align="center"><a href="data.html" target="_new"><image src="images\btn_data.png" width="60%" height="50px"></a></div>
+				<div align="center"><image src="images\btn_player.png" width="60%" height="50px"></div>
+				<div align="center"><image src="images\btn_support.png" width="60%" height="50px"></div>
+			</div>
+		</div>
+		<div id="contain">
+			<div id="div1">
+				<ul>
+					<li>
+						<img src="images/f_1.png" />
+					</li>
+					<li>
+						<img src="images/f_2.png" />
+					</li>
+					<li>
+						<img src="images/f_1.png" />
+					</li>
+					<li>
+						<img src="images/f_2.png" />
+					</li>
+				</ul>
+			</div>
+			<div id="info">
+				<div>
+					<input type="button" width="25%" value="热点活动">
+					<input type="button" width="25%" value="官方公告">
+					<input type="button" width="25%" value="游戏攻略">
+					<input type="button" width="25%" value="娱乐作品">
+				</div>
+				<div>
+					<iframe src="forum.html" width="100%" height="430px" name="forum"></iframe>	
+				</div>
+			</div>
+					
+			<div id="gallery">
+				<div align="center"><font size="5">玩家作品展示</font></div>
+			</div>
+			<div id="data">
+				<table id="tab">
+					<th height="5%" align="center">怪物资料一览</th>
+					<tr height="95%"><td><iframe src="monsterinfo.html" width="100%" height="100%" name="monsterinfo"></iframe></td></tr>	
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
